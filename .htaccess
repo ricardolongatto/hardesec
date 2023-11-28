@@ -3,7 +3,6 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ hardesec.php [L]
 
-//Lista de User-Agents a serem bloqueados
 SetEnvIfNoCase User-Agent "Wfuzz" bad_user_agent
 SetEnvIfNoCase User-Agent "gobuster" bad_user_agent
 SetEnvIfNoCase User-Agent "Nikto" bad_user_agent
