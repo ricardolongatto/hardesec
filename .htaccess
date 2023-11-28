@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ hardesec.php [L]
+
+//Lista de User-Agents a serem bloqueados
+SetEnvIfNoCase User-Agent "Wfuzz" bad_user_agent
+SetEnvIfNoCase User-Agent "gobuster" bad_user_agent
+SetEnvIfNoCase User-Agent "Nikto" bad_user_agent
+SetEnvIfNoCase User-Agent "Nmap" bad_user_agent
+SetEnvIfNoCase User-Agent "WhatWeb" bad_user_agent
+SetEnvIfNoCase User-Agent "sqlmap" bad_user_agent
+SetEnvIfNoCase User-Agent "WPScan" bad_user_agent
+SetEnvIfNoCase User-Agent "nessus" bad_user_agent
+SetEnvIfNoCase User-Agent "openvas" bad_user_agent
+SetEnvIfNoCase User-Agent "DirBuster" bad_user_agent
+SetEnvIfNoCase User-Agent "fuzz" bad_user_agent
+SetEnvIfNoCase User-Agent "feroxbuster" bad_user_agent
+SetEnvIfNoCase User-Agent "commix" bad_user_agent
+SetEnvIfNoCase User-Agent "curl" bad_user_agent
+SetEnvIfNoCase User-Agent "python" bad_user_agent
+
+Order allow,deny
+Deny from env=bad_user_agent
+Allow from all
