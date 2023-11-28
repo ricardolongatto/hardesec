@@ -37,3 +37,9 @@ No arquivo de configuração do apache, garanta que a diretiva AllowOverride est
 Reinicie o serviço
 
 systemctl restart apache2
+
+Como funciona?
+
+Quando for solicitado algum recurso que não existe no servidor (tanto arquivo quanto diretório), o servidor irá retornar uma resposta aleatória. 
+
+
