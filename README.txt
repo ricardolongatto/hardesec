@@ -30,9 +30,14 @@ No arquivo de configuração do apache, garanta que a diretiva AllowOverride est
 
 <Directory /var/www/>
     Options FollowSymLinks
-    AllowOverride ALL
+    AllowOverride All
     Require all granted
 </Directory>
+
+Habilite o modulo rewrite do apache
+
+a2enmod rewrite
+service apache2 restart
 
 Reinicie o serviço
 
