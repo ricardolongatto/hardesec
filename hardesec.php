@@ -34,6 +34,9 @@
   // Configurar o tamanho da resposta
   header('Content-Length: ' . strlen($respostaQuebrada));
 
+  // Sleep para randomizar o tempo de resposta e evitar enumeracao time-based
+  usleep(mt_rand(200, 400000));
+
   // Exibe o cabeçalho do documento HTML
   echo "<!DOCTYPE html>
 <html>
